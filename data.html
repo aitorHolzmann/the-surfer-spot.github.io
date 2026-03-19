@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plantilla de Sitio Web - Datos Dinámicos</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/data.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <a href="./index.html" class="titulo-enlace">
+          <h1>The Surfer Spot</h1>
+        </a>
+
+        <button
+          class="hamburger-menu"
+          aria-label="Abrir menú de navegación"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          &#9776;
+        </button>
+        <nav id="main-nav">
+          <ul>
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./spots.html">Spots</a></li>
+            <li><a href="./tablas.html">Tablas</a></li>
+            <li><a href="./data.html">Sesiones</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section>
+        <h2>Registrá tu progreso</h2>
+        <form id="data-form">
+          <label for="sesion-fecha">Fecha de la sesión:</label>
+          <input type="date" id="sesion-fecha" required />
+
+          <label for="sesion-lugar">Lugar:</label>
+          <input
+            type="text"
+            id="sesion-lugar"
+            placeholder="Ej. La Esco"
+            required
+          />
+
+          <label for="sesion-tabla">Tabla:</label>
+          <input
+            type="text"
+            id="sesion-tabla"
+            placeholder="Ej. Longboard"
+            required
+          />
+
+          <label for="sesion-olas">Olas surfeadas:</label>
+          <input type="number" id="sesion-olas" placeholder="Ej. 10" required />
+
+          <button type="submit" id="add-sesion-btn" class="add-btn">
+            Agregar Elemento
+          </button>
+          <button type="submit" id="update-sesion-btn" class="update-btn">
+            Actualizar Elemento
+          </button>
+          <button type="reset" class="cancel-btn">Cancelar</button>
+        </form>
+        <div id="loading-indicator" class="hidden">Cargando datos...</div>
+        <div id="status-message" class="hidden">Mensaje a mostrar</div>
+      </section>
+      <section class="seccion-sesiones">
+        <h2>Historia de sesiones</h2>
+        <table id="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Fecha</th>
+              <th>Lugar</th>
+              <th>Tabla</th>
+              <th>Olas surfeadas</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <p>&copy; 2026 The Surfer Spot</p>
+      </div>
+    </footer>
+    <div id="confirmation-modal" class="modal">
+      <div class="modal-content">
+        <h3>¿Está seguro de que desea eliminar esta sesión?</h3>
+        <div class="modal-buttons">
+          <button class="confirm-btn">Sí, eliminar</button>
+          <button class="cancel-btn">Cancelar</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/base.js"></script>
+    <script src="js/data.js"></script>
+  </body>
+</html>

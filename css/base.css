@@ -1,0 +1,346 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Inter", sans-serif;
+  background-color: #f3efe0;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+header {
+  width: 100%;
+  padding: 1rem 0;
+
+  background-color: #005b96;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.titulo-enlace:hover {
+  text-decoration: none;
+}
+
+h1 {
+  margin: 0;
+
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Estilos del botón de menú hamburguesa */
+button.hamburger-menu {
+  display: block; /* Visible por defecto en móvil */
+  padding: 0.5rem;
+
+  color: #ecf0f1;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none; /* Elimina el contorno al hacer focus */
+}
+
+/* Menú de navegación */
+nav {
+  z-index: 999;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+
+  display: none;
+  flex-direction: column;
+
+  background-color: #6497b1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 0.75rem 0.75rem;
+  overflow: hidden;
+
+  ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    list-style: none;
+  }
+
+  li {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  a {
+    width: 100%;
+    padding: 0.75rem 1rem;
+
+    display: block;
+
+    color: #f3efe0;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    box-sizing: border-box;
+
+    &:hover,
+    &:focus {
+      background-color: #f3efe0;
+      border-radius: 0.5rem;
+      color: #e67e22;
+    }
+  }
+}
+nav.nav-open {
+  display: flex; /* Muestra el menú cuando tiene la clase 'nav-open' */
+}
+
+/* Contenido principal */
+main {
+  max-width: 1200px;
+  margin: 0rem auto;
+  padding: 1rem;
+}
+
+section {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+article {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+
+  border-top: 1px solid #eee;
+}
+
+article:first-child {
+  border-top: none;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e67e22;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #005b96;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+img {
+  max-width: 100%;
+  width: 800px;
+  height: auto;
+  margin: 1rem auto;
+
+  border-radius: 0.5rem;
+  border: 2px solid #005b96;
+  box-shadow: 2px 4px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+a {
+  color: #e67e22;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem 0;
+
+  background-color: #005b96;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+
+  color: #e67e22;
+}
+
+iframe {
+  width: 100%;
+}
+
+.lista-enlaces {
+  list-style: none;
+  padding-left: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  a {
+    width: 10rem;
+    padding: 0.5rem 0rem;
+    display: block;
+
+    border-radius: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+
+    border: 2px solid #e67e22;
+    background-color: #f3efe0;
+
+    color: #e67e22;
+
+    transition: 150ms ease-in-out;
+
+    &:hover {
+      text-decoration: none;
+
+      background-color: #e67e22;
+      color: white;
+    }
+  }
+}
+
+.lista-caracteristicas {
+  list-style: none;
+  padding-left: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  li {
+    max-width: 600px;
+    width: 100%;
+    padding: 0.5rem;
+
+    border-radius: 0.5rem;
+    background-color: #f3efe0;
+    border: 2px solid #e67e22;
+    color: #1a1a1a;
+
+    transition: 150ms ease-in-out;
+
+    &:hover {
+      background-color: #e67e22;
+      color: white;
+    }
+  }
+}
+
+.seccion-tabla-comparativa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  table {
+    max-width: 800px;
+    width: 100%;
+    border-collapse: collapse;
+    display: block;
+    overflow-x: auto;
+
+    tr,
+    td,
+    th {
+      border: 2px solid #005b96;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* Menú fijo en pantallas grandes */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* Oculta el botón de hamburguesa en pantallas grandes */
+  button.hamburger-menu {
+    display: none;
+  }
+
+  /* Muestra el menú de navegación en línea en pantallas grandes */
+  nav {
+    display: block; /* Vuelve a modelo de bloque para el flujo normal */
+    position: static; /* Restaura la posición estática */
+    width: auto; /* Ancho automático */
+    background-color: transparent; /* Fondo transparente */
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  nav ul {
+    flex-direction: row; /* Elementos del menú en fila */
+    justify-content: flex-end; /* Alinea a la derecha */
+  }
+
+  nav li {
+    margin-left: 1rem; /* Espacio entre elementos del menú */
+    margin-bottom: 0;
+    width: auto;
+  }
+
+  nav a {
+    padding: 0.5rem 1rem; /* Ajusta el relleno interno para pantallas grandes */
+    border-radius: 0.5rem;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* Ejemplo: una columna para barra lateral, otra para contenido */
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  section.right {
+    grid-column-start: 2;
+  }
+
+  section:first-child {
+    top: 15%;
+    position: sticky;
+    height: min-content;
+    padding: 0 0.5rem;
+
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  section:first-child {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}

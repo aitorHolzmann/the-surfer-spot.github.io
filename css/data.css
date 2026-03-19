@@ -1,0 +1,247 @@
+.seccion-sesiones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+table {
+  width: min-content;
+  margin-top: 1.5rem;
+  overflow-x: auto;
+
+  display: block;
+
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+th,
+td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: #005b96; /* Azul más claro para encabezados de tabla */
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+th:first-child {
+  border-top-left-radius: 0.75rem;
+}
+th:last-child {
+  border-top-right-radius: 0.75rem;
+}
+
+td.empty {
+  text-align: center;
+  padding: 1rem;
+  color: #777;
+}
+
+tr:nth-child(even) {
+  background-color: #f0f0f0; /* Rayado para filas pares */
+}
+
+.table-actions button {
+  background-color: #6497b1; /* Verde para editar */
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.table-actions .delete-btn {
+  background-color: #e74c3c; /* Rojo para eliminar */
+}
+
+.table-actions button:hover {
+  opacity: 0.8;
+}
+
+form {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 0.875rem; /* text-sm */
+}
+
+form input[type="date"],
+form input[type="text"],
+form input[type="number"] {
+  width: calc(100% - 2rem); /* Ajuste para padding */
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+
+  border: 1px solid #6497b1;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.07); /* Sombra interna para apariencia de input */
+  outline: none;
+  background-color: #f3efe0;
+}
+
+form input[type="date"]:focus,
+form input[type="text"]:focus,
+form input[type="number"]:focus {
+  border-color: #e67e22;
+  box-shadow: 0 0 0 3px #6497b173; /* Sombra de focus */
+}
+
+form button {
+  background-color: #e67e22;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  outline: none;
+}
+
+form button:hover {
+  background-color: #ff7700;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+form button.update-btn {
+  display: none;
+  background-color: #6497b1;
+}
+
+form button.update-btn:hover {
+  background-color: #74b0ce;
+}
+
+form button.cancel-btn {
+  background-color: #ccc;
+  color: #333;
+}
+
+form button.cancel-btn:hover {
+  background-color: #bbb;
+}
+
+/* Estilos para mensajes de carga y estado */
+#loading-indicator,
+#status-message {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+#loading-indicator {
+  color: #3498db;
+  background-color: #eaf6ff;
+}
+
+/* Estilos para mensajes de estado */
+#status-message {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+#status-message.error {
+  color: #e74c3c;
+  background-color: #ffebeb;
+}
+
+#status-message.success {
+  color: #6497b1;
+  background-color: #ebfaeb;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/* Estilos para el modal de confirmación */
+.modal {
+  display: none;
+  position: fixed; /* Permanece en su lugar incluso al hacer scroll */
+  z-index: 1001; /* Por encima de todo lo demás */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Habilitar scroll si es necesario */
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Ancho responsivo */
+  max-width: 500px; /* Ancho máximo */
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.modal-content h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.modal-buttons button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin: 0 0.5rem;
+}
+
+.modal-buttons button.confirm-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.modal-buttons button.confirm-btn:hover {
+  background-color: #c0392b;
+}
+
+.modal-buttons button.cancel-btn {
+  background-color: #ccc;
+  color: #333;
+}
+
+.modal-buttons button.cancel-btn:hover {
+  background-color: #bbb;
+}
